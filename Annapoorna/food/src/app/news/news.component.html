@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div>
+        <span class="scrollbar">
+      <marquee behavior="scroll" direction="right">Coronavirus outbreak: How safe is your food
+        Last updated on - Mar 19, 2020, 21:00 IST
+      </marquee>
+    </span>
+    </div>
+    <div class="row">
+        <div class="col-6" *ngFor="let new of news">
+            <div class="card w-55 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+
+                    <div style="width: 40%;  float: left; ">
+                        <img src="{{new.image}}" style="height: 200px; width:200px;">
+                    </div>
+                    <div>
+                        <span class="heading">{{new.head}}</span>
+                        <br>
+                        <span class="news">
+              {{new.news}}
+            </span><br>
+                        <span> <button type="submit" class="btn btn-info">
+                <a href="{{new.details}}">
+                  Read more at</a></button></span>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>

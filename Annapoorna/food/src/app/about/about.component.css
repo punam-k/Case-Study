@@ -1,0 +1,19 @@
+.text {
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+.hello {
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.name {
+    font-family: cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.para {
+    font-family: 'Times New Roman', Times, serif;
+}

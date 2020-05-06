@@ -1,25 +1,25 @@
-const mongoose=require('mongoose');
-const orderSchema=mongoose.Schema({
-  
-    ordername:{
-        type:String
-        
+const mongoose = require('mongoose');
+const orderSchema = mongoose.Schema({
+
+    ordername: {
+        type: String
+
     },
-  
-    ordernumber:{
-        type:Number
-        
+
+    ordernumber: {
+        type: Number
+
     },
-  
-    placeofsupply:{
-        type:String
+
+    placeofsupply: {
+        type: String
     },
-    placeofdelivery:{
-        type:String
+    placeofdelivery: {
+        type: String
     },
-    price:{
-        type:Number
+    price: {
+        type: Number
     }
-   
+
 })
-const Order=module.exports=mongoose.model('Order',orderSchema)
+const Order = module.exports = mongoose.model('Order', orderSchema)

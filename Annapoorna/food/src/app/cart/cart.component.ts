@@ -25,8 +25,10 @@ export class CartComponent implements OnInit {
   getItemsFromService() {
     this.cartservice.getToCart().subscribe((response) => {
       this.item = response;
+      console.log(this.item)
       this.item.forEach(item => {
-        item.ordervalue = 0
+        item.ordervalue = 1
+        if(item.ordervalue == 0){  this.deleteFromCart(item)}
       })
 
     })
@@ -43,7 +45,8 @@ export class CartComponent implements OnInit {
     this.toastrservice.success('successfully Order placed');
     this.item.forEach(item => {
       item.ordervalue = 0
-      this.deleteFromCart(item)
+      if(item.ordervalue == 0){  this.deleteFromCart(item)}
+    
 
     })
   }
@@ -52,14 +55,19 @@ export class CartComponent implements OnInit {
   }
   getCoupon(coupon) {
     console.log("coupon", coupon);
-    console.log("coupon", coupon.price);
-    this.resultPrice = coupon.price - 10;
-    console.log(this.resultPrice)
-    return this.resultPrice;
+    console.log("coupon-price", coupon.price);
+    this.item.forEach(item => {
+      console.log(item.price)
+     this.resultPrice = item.price - 10;
+      console.log(item.price);
+    })
+    coupon.price=   this.resultPrice;
+    console.log(coupon.price);
+   
+    return coupon.price;
   }
 
   Increment(cond, item) {
-
     if (cond === 'up') {
       item.ordervalue++
     }
@@ -68,6 +76,8 @@ export class CartComponent implements OnInit {
         item.ordervalue--;
 
       }
+      if(item.ordervalue == 0)
+      {  this.deleteFromCart(item)}
     }
   }
 }
